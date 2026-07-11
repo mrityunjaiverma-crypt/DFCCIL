@@ -1,0 +1,57 @@
+.topbar {
+  background-color: var(--dfccil-blue-light);
+  color: var(--text-light);
+  font-size: 0.85rem;
+  padding: 6px 0;
+}
+
+.topbar .flex {
+  gap: 15px;
+}
+
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar span {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.topbar span:hover {
+  opacity: 0.8;
+}
+
+.divider {
+  opacity: 0.5;
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+.text-size {
+  display: flex;
+  gap: 8px;
+}
+
+.contrast-toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.contrast-light {
+  background: white;
+  color: black;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.contrast-dark {
+  background: black;
+  color: white;
+  padding: 0 4px;
+  border-radius: 2px;
+}

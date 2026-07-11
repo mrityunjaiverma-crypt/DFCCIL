@@ -1,0 +1,65 @@
+.header {
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.py-4 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.main-logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+.logo-text h1 {
+  color: var(--dfccil-blue-dark);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.logo-text p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.initiative-logos {
+  gap: 20px;
+}
+
+.initiative-logos div {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--dfccil-blue-dark);
+  padding: 5px 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.header-actions {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-actions button {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s;
+  justify-content: center;
+}
+
+.header-actions button:hover {
+  background: var(--bg-light);
+  color: var(--dfccil-blue-dark);
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
