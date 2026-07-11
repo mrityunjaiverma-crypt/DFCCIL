@@ -1,0 +1,229 @@
+.press-releases-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: calc(100vh - 300px);
+}
+
+.pr-header {
+    background-color: #007a8c;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+
+.pr-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.last-updated {
+    position: absolute;
+    right: 20px;
+    font-size: 0.9rem;
+}
+
+.pr-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+}
+
+.pr-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.pr-table th {
+    background-color: #00879e;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.pr-table th:first-child {
+    text-align: center;
+    width: 80px;
+}
+
+.pr-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.pr-table td:first-child {
+    text-align: center;
+    font-weight: 500;
+}
+
+.pr-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.pr-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.view-pdf-link {
+    display: flex;
+    align-items: center;
+    color: #0033cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.view-pdf-link:hover {
+    text-decoration: underline;
+}
+
+.pdf-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    color: #d32f2f;
+}
+
+.no-file {
+    color: #777;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.edit-btn {
+    color: #007a8c;
+}
+
+.edit-btn:hover {
+    background-color: #e0f2f5;
+}
+
+.delete-btn {
+    color: #d32f2f;
+}
+
+.delete-btn:hover {
+    background-color: #fdeaea;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 500px;
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background: #007a8c;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-cancel {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-save {
+    padding: 8px 15px;
+    border: none;
+    background: #007a8c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-save:hover {
+    background: #005f6e;
+}

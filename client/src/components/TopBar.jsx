@@ -6,11 +6,7 @@ const TopBar = () => {
     <div className="topbar">
       <div className="container flex justify-between items-center">
         <div className="topbar-left">
-          <span>E-Tender/IRFPS</span>
-          <span className="divider">|</span>
-          <span>Freight Business Portal</span>
-          <span className="divider">|</span>
-          <span className="highlight">CVC Link for E-Pledge</span>
+          {/* Removed links per request */}
         </div>
         <div className="topbar-right">
           <span>Skip to Main Content</span>

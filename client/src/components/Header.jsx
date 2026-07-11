@@ -1,8 +1,25 @@
-import React from 'react';
-import { Mail, LogIn } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, LogIn, LogOut } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem('adminToken'));
+    const handleStorageChange = () => setIsLoggedIn(!!localStorage.getItem('adminToken'));
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('adminToken');
+    setIsLoggedIn(false);
+    window.dispatchEvent(new Event('storage'));
+    window.location.href = '/';
+  };
+
   return (
     <header className="header">
       <div className="container flex justify-between items-center py-4">
@@ -14,20 +31,19 @@ const Header = () => {
           </div>
         </div>
         
-        <div className="initiative-logos flex items-center">
-          {/* Using text blocks or placeholder divs if images aren't all available, but we have logo.jpg for the main one */}
-          <div className="g20-logo">G20</div>
-          <div className="gatishakti-logo">PM GatiShakti</div>
-          <div className="azadi-logo">Azadi Ka Amrit Mahotsav</div>
-        </div>
-
         <div className="header-actions flex">
           <button className="btn-contact flex items-center">
             <Mail size={16} className="mr-2" /> Contact Us
           </button>
-          <button className="btn-login flex items-center">
-            <LogIn size={16} className="mr-2" /> Login
-          </button>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className="btn-login flex items-center" style={{ background: '#d32f2f', border: 'none' }}>
+              <LogOut size={16} className="mr-2" /> Logout
+            </button>
+          ) : (
+            <a href="/login" className="btn-login flex items-center" style={{ textDecoration: 'none' }}>
+              <LogIn size={16} className="mr-2" /> Login
+            </a>
+          )}
         </div>
       </div>
     </header>

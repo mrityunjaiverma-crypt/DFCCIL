@@ -1,24 +1,62 @@
-import React, { useState } from 'react';
-import { Home, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Home, ChevronDown, Edit2 } from 'lucide-react';
 import './Navbar.css';
 
 const navItems = [
-  { id: 'about', label: 'About Us', hasDropdown: true },
-  { id: 'projects', label: 'Projects', hasDropdown: true },
-  { id: 'dashboard', label: 'DFCCIL Dashboard', hasDropdown: false },
-  { id: 'business', label: 'Business Development', hasDropdown: true },
-  { id: 'operations', label: 'Operations & Safety', hasDropdown: true },
-  { id: 'tender', label: 'Tender', hasDropdown: true },
-  { id: 'careers', label: 'Careers', hasDropdown: true },
-  { id: 'info', label: 'Other Info', hasDropdown: true },
-  { id: 'personnel', label: 'For DFCCIL Personnel', hasDropdown: true },
-  { id: 'media', label: 'Media', hasDropdown: true },
-  { id: 'sanchar', label: 'GatiShakti Sanchar Portal', hasDropdown: true },
-  { id: 'payment', label: 'Payment Gateway', hasDropdown: false, isSpecial: true }
+  { 
+    id: 'about', 
+    label: 'About Us', 
+    hasDropdown: true,
+    subItems: ['Society Overview', 'History', 'Management', 'Corporate Office', 'Field Units', 'Board of Directors']
+  },
+  { 
+    id: 'projects', 
+    label: 'Projects', 
+    hasDropdown: true,
+    subItems: ['Ongoing Projects', 'Completed Projects']
+  },
+  { 
+    id: 'dashboard', 
+    label: 'DFCCIL Dashboard', 
+    hasDropdown: false 
+  },
+  { 
+    id: 'business', 
+    label: 'Business Development', 
+    hasDropdown: true,
+    subItems: ['Tenders', 'Opportunities', 'Partnerships']
+  },
+  { 
+    id: 'media', 
+    label: 'Media', 
+    hasDropdown: true,
+    subItems: ['Press Releases', 'Photo Gallery', 'News']
+  },
+  { 
+    id: 'payment', 
+    label: 'Payment Gateway', 
+    hasDropdown: false,
+    isSpecial: true
+  }
 ];
+
+const getSubItemHref = (categoryId, subItem, index) => {
+    if (subItem === 'Press Releases') return '/press-releases';
+    const slug = subItem.toLowerCase().replace(/ /g, '-');
+    return `/page/${slug}`;
+};
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(!!localStorage.getItem('adminToken'));
+    // Listen for storage changes in case of login/logout in same tab
+    const handleStorageChange = () => setIsAdmin(!!localStorage.getItem('adminToken'));
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -42,9 +80,23 @@ const Navbar = () => {
               {item.hasDropdown && activeDropdown === item.id && (
                 <div className="dropdown-menu fade-in">
                   <ul>
-                    <li><a href={`#${item.id}-1`}>Sub Item 1</a></li>
-                    <li><a href={`#${item.id}-2`}>Sub Item 2</a></li>
-                    <li><a href={`#${item.id}-3`}>Sub Item 3</a></li>
+                    {item.subItems.map((subItem, index) => (
+                      <li key={index}>
+                        <a 
+                          href={getSubItemHref(item.id, subItem, index)} 
+                          className="flex justify-between items-center w-full"
+                        >
+                          <span>{subItem}</span>
+                          {isAdmin && (
+                            <Edit2 
+                              size={14} 
+                              className="ml-2 text-gray-400 hover:text-white cursor-pointer" 
+                              title="Edit item"
+                            />
+                          )}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               )}

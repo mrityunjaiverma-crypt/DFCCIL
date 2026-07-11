@@ -7,7 +7,15 @@ const MainContent = () => {
     <div className="main-content flex">
       {/* Left side Slider */}
       <div className="hero-slider">
-        <img src="/hero.jpg" alt="DFCCIL Housing Landscape" className="hero-image" />
+        <img src="/main-building.jpg" alt="DFCCIL Housing Model" className="hero-image" />
+        
+        <div className="hero-overlay-content">
+          <div className="glass-panel">
+            <h2 className="welcome-title">Welcome to DFCCIL Housing Society</h2>
+            <p className="welcome-subtitle">Redefining Modern Living with Excellence and Harmony</p>
+          </div>
+        </div>
+
         <div className="slider-controls">
           <button className="slider-btn prev"><ChevronLeft size={24} /></button>
           <button className="slider-btn next"><ChevronRight size={24} /></button>
@@ -26,8 +34,7 @@ const MainContent = () => {
         </div>
         <div className="event-card mt-2">
            <div className="event-image-wrapper">
-            {/* Reusing event1 as placeholder for the second block, or we can use generic color block */}
-            <img src="/event1.jpg" alt="Managing Directors" style={{filter: 'hue-rotate(90deg)'}} />
+            <img src="/ceo-message.jpg" alt="Managing Directors" />
             <div className="event-overlay">
               <p>Message from Managing Directors and CEO</p>
             </div>
