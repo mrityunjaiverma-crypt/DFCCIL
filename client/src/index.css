@@ -1,12 +1,12 @@
 :root {
-  --dfccil-blue-dark: #004b87;
-  --dfccil-blue-light: #00a2e8;
-  --dfccil-red: #e31837;
-  --bg-light: #f4f6f9;
-  --text-dark: #333333;
+  --dfccil-blue-dark: #0A2540; /* Richer, deeper navy */
+  --dfccil-blue-light: #00E5FF; /* Vibrant modern cyan accent */
+  --dfccil-red: #D4AF37; /* Replaced aggressive red with champagne gold */
+  --bg-light: #F8F9FA; /* Softer off-white */
+  --text-dark: #1E293B; /* Slate instead of stark black */
   --text-light: #ffffff;
-  --border-color: #dddddd;
-  --hover-bg: #003666;
+  --border-color: #E2E8F0;
+  --hover-bg: #113355;
 }
 
 * {
@@ -16,10 +16,12 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

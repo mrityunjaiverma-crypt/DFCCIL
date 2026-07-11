@@ -87,13 +87,6 @@ const Navbar = () => {
                           className="flex justify-between items-center w-full"
                         >
                           <span>{subItem}</span>
-                          {isAdmin && (
-                            <Edit2 
-                              size={14} 
-                              className="ml-2 text-gray-400 hover:text-white cursor-pointer" 
-                              title="Edit item"
-                            />
-                          )}
                         </a>
                       </li>
                     ))}

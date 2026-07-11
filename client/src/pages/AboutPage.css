@@ -7,10 +7,10 @@
 
 .about-header {
     background-color: #007a8c;
+    background: linear-gradient(135deg, var(--dfccil-blue-dark) 0%, #1a365d 100%);
     color: white;
-    padding: 15px 30px;
-    border-radius: 4px 4px 0 0;
-    margin-bottom: 20px;
+    padding: 20px 30px;
+    border-radius: 12px 12px 0 0;
 }
 
 .about-header h2 {
@@ -20,14 +20,12 @@
 }
 
 .about-content {
-    background: white;
+    background-color: white;
     padding: 40px;
-    border-radius: 0 0 4px 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border: 1px solid #e0e0e0;
-    border-top: none;
-    line-height: 1.6;
-    color: #333;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    line-height: 1.8;
+    color: var(--text-dark);
 }
 
 .about-content h3 {
