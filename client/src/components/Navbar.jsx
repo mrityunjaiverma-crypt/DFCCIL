@@ -17,7 +17,7 @@ const navItems = [
   },
   { 
     id: 'dashboard', 
-    label: 'DFCCIL Dashboard', 
+    label: 'DFCCIL Housing Society Dashboard', 
     hasDropdown: false 
   },
   { 
