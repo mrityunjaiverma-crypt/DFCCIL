@@ -20,8 +20,22 @@ const TopBar = () => {
     }
   };
 
+  const [isHindi, setIsHindi] = useState(false);
+
   const handleLanguageToggle = () => {
-    alert('Hindi Translation feature initialized. Real implementation requires Google Translate API integration.');
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      if (isHindi) {
+        select.value = 'en';
+        setIsHindi(false);
+      } else {
+        select.value = 'hi';
+        setIsHindi(true);
+      }
+      select.dispatchEvent(new Event('change'));
+    } else {
+      alert('Translation service is still loading, please try again in a moment.');
+    }
   };
 
   return (
