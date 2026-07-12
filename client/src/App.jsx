@@ -10,6 +10,7 @@ import Admin from './pages/Admin';
 import PressReleases from './pages/PressReleases';
 import AboutPage from './pages/AboutPage';
 import RegistrationPage from './pages/RegistrationPage';
+import RegisteredMembersPage from './pages/RegisteredMembersPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/press-releases" element={<PressReleases />} />
         <Route path="/registration" element={<RegistrationPage />} />
+        <Route path="/registered-members" element={<RegisteredMembersPage />} />
         <Route path="/page/:sectionId" element={<AboutPage />} />
       </Routes>
 

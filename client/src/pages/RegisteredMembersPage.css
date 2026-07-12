@@ -1,0 +1,126 @@
+.members-page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 300px);
+}
+
+.members-header {
+  background: linear-gradient(135deg, var(--dfccil-blue-dark) 0%, #1a365d 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-content h2 {
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.header-content .inline-icon {
+  margin-right: 12px;
+}
+
+.header-content p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.search-bar {
+  position: relative;
+  width: 300px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
+}
+
+.members-content {
+  background: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  padding: 0; /* padding handled by table */
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.members-table-wrapper {
+  overflow-x: auto;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.members-table th {
+  padding: 16px 24px;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.members-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.members-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.members-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.member-name {
+  font-weight: 600;
+  color: var(--dfccil-blue-dark);
+}
+
+.flat-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

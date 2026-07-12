@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const News = require('../models/News');
+const Registration = require('../models/Registration');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const multer = require('multer');
@@ -21,7 +22,6 @@ const upload = multer({ storage: storage });
 // Get all news
 router.get('/news', async (req, res) => {
     try {
-        // Return dummy data if DB fails or is empty, to ensure frontend always has content
         const dummyNews = [
             { _id: '1', title: 'Reply to Pre Bid Queries', isNew: true },
             { _id: '2', title: 'Congratulatory Message from the Chairman & CEO, Railway Board', isNew: true },
@@ -41,6 +41,27 @@ router.get('/news', async (req, res) => {
         }
 
         res.json(news);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Create new registration
+router.post('/registrations', async (req, res) => {
+    try {
+        const newRegistration = new Registration(req.body);
+        const savedRegistration = await newRegistration.save();
+        res.status(201).json(savedRegistration);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+// Get all registrations
+router.get('/registrations', async (req, res) => {
+    try {
+        const registrations = await Registration.find().sort({ registrationDate: -1 });
+        res.json(registrations);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

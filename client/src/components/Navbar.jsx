@@ -7,7 +7,7 @@ const navItems = [
     id: 'about', 
     label: 'About Us', 
     hasDropdown: true,
-    subItems: ['Society Overview', 'History', 'Management', 'Corporate Office', 'Field Units', 'Board of Directors']
+    subItems: ['Society Overview', 'History', 'Management', 'Corporate Office', 'Field Units', 'Board of Directors', 'Registered Members']
   },
   { 
     id: 'projects', 
@@ -44,6 +44,7 @@ const navItems = [
 const getSubItemHref = (categoryId, subItem, index) => {
     if (subItem === 'Press Releases') return '/press-releases';
     if (subItem === 'Registration Form') return '/registration';
+    if (subItem === 'Registered Members') return '/registered-members';
     const slug = subItem.toLowerCase().replace(/ /g, '-');
     return `/page/${slug}`;
 };

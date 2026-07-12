@@ -18,11 +18,25 @@ const RegistrationPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Normally you'd send this to the backend API here.
-    console.log('Registration Submitted:', formData);
-    setSubmitted(true);
+    try {
+      const res = await fetch('http://localhost:5000/api/registrations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        console.log('Registration Submitted successfully');
+        setSubmitted(true);
+      } else {
+        console.error('Failed to submit registration');
+        alert('Failed to submit registration. Please try again.');
+      }
+    } catch (err) {
+      console.error('Error submitting registration:', err);
+      alert('Network error. Is the server running?');
+    }
   };
 
   return (
