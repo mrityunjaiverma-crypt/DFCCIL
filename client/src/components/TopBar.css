@@ -40,6 +40,28 @@
   gap: 8px;
 }
 
+.language {
+  font-weight: 600;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.cursor-pointer:hover {
+  opacity: 0.8;
+}
+
+.skip-link {
+  color: white;
+  text-decoration: none;
+}
+
+.skip-link:hover {
+  text-decoration: underline;
+}
+
 .contrast-toggles {
   display: flex;
   gap: 8px;

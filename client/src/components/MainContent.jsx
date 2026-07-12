@@ -34,7 +34,7 @@ const MainContent = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="main-content flex">
+    <div className="main-content flex" id="main-content">
       {/* Left side Slider */}
       <div className="hero-slider">
         {slides.map((slide, index) => (
