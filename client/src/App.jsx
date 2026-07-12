@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import PressReleases from './pages/PressReleases';
 import AboutPage from './pages/AboutPage';
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/press-releases" element={<PressReleases />} />
+        <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/page/:sectionId" element={<AboutPage />} />
       </Routes>
 

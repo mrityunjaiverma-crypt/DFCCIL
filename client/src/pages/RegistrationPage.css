@@ -1,0 +1,120 @@
+.registration-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 300px);
+}
+
+.registration-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.registration-header {
+  background: linear-gradient(135deg, var(--dfccil-blue-dark) 0%, #1a365d 100%);
+  color: white;
+  padding: 30px 40px;
+  text-align: center;
+}
+
+.registration-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.registration-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.05rem;
+}
+
+.registration-form {
+  padding: 40px;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group select {
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #00E5FF;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+  background-color: white;
+}
+
+.form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.registration-success {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.registration-success h3 {
+  color: #10b981;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.registration-success p {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

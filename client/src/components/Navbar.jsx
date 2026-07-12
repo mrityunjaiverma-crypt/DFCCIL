@@ -35,13 +35,15 @@ const navItems = [
   { 
     id: 'payment', 
     label: 'Payment Gateway', 
-    hasDropdown: false,
-    isSpecial: true
+    hasDropdown: true,
+    isSpecial: true,
+    subItems: ['Registration Form']
   }
 ];
 
 const getSubItemHref = (categoryId, subItem, index) => {
     if (subItem === 'Press Releases') return '/press-releases';
+    if (subItem === 'Registration Form') return '/registration';
     const slug = subItem.toLowerCase().replace(/ /g, '-');
     return `/page/${slug}`;
 };
