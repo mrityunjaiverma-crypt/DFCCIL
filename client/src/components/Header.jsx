@@ -27,7 +27,7 @@ const Header = () => {
           <img src="/logo.jpg" alt="DFCCIL Logo" className="main-logo" />
           <div className="logo-text">
             <h1>DFCCIL Housing Society</h1>
-            <p>A Govt. of India (Ministry of Railways) Enterprise</p>
+
           </div>
         </div>
         
