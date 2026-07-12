@@ -19,10 +19,13 @@ const RegisteredMembersPage = () => {
         const data = await res.json();
         setMembers(data);
       } else {
-        setError('Failed to load registered members.');
+        throw new Error('Server returned an error');
       }
     } catch (err) {
-      setError('Network error. Unable to fetch members.');
+      console.warn('Backend unreachable, loading from local storage as fallback for demo purposes:', err);
+      // Fallback for Netlify demo without backend
+      const localData = JSON.parse(localStorage.getItem('mockRegistrations') || '[]');
+      setMembers(localData);
     } finally {
       setLoading(false);
     }
