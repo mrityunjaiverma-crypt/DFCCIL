@@ -7,7 +7,7 @@ const navItems = [
     id: 'about', 
     label: 'About Us', 
     hasDropdown: true,
-    subItems: ['Society Overview', 'History', 'Management', 'Corporate Office', 'Field Units', 'Board of Directors', 'Registered Members']
+    subItems: ['Society Overview', 'History', 'Management', 'Corporate Office', 'Field Units', 'Board of Directors']
   },
   { 
     id: 'projects', 
@@ -18,7 +18,8 @@ const navItems = [
   { 
     id: 'dashboard', 
     label: 'DFCCIL Housing Society Dashboard', 
-    hasDropdown: false 
+    hasDropdown: true,
+    subItems: ['Registered Members']
   },
   { 
     id: 'business', 
