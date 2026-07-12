@@ -34,11 +34,11 @@ const navItems = [
     subItems: ['Press Releases', 'Photo Gallery', 'News']
   },
   { 
-    id: 'payment', 
-    label: 'Payment Gateway', 
-    hasDropdown: true,
+    id: 'registration', 
+    label: 'Registration Form', 
+    hasDropdown: false,
     isSpecial: true,
-    subItems: ['Registration Form']
+    href: '/registration'
   }
 ];
 
@@ -77,7 +77,7 @@ const Navbar = () => {
               onMouseEnter={() => setActiveDropdown(item.id)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a href={`#${item.id}`} className="nav-link flex items-center">
+              <a href={item.href || `#${item.id}`} className="nav-link flex items-center">
                 {item.label} {item.hasDropdown && <ChevronDown size={14} className="ml-1" />}
               </a>
               
