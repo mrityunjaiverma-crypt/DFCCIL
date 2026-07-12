@@ -21,12 +21,7 @@ const navItems = [
     hasDropdown: true,
     subItems: ['Registered Members']
   },
-  { 
-    id: 'business', 
-    label: 'Business Development', 
-    hasDropdown: true,
-    subItems: ['Tenders', 'Opportunities', 'Partnerships']
-  },
+
   { 
     id: 'media', 
     label: 'Media', 
